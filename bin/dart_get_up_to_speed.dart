@@ -95,5 +95,14 @@ String returnsStringTopLevel() {
 void otherFunction() {
   // can only call topLevel Functions
   returnsStringTopLevel();
+}
 
+// Parameters Functions Take in
+void positionalParams(int x, double y, String greeting) {
+  positionalParams(5, 3.5, 'Hi');
+}
+
+void optionalpositionalParams(int x, double y, [String greeting = 'HI']) {
+  optionalpositionalParams(5, 3.5);
+  optionalpositionalParams(5, 3.5, "HI Optionally");
 }
