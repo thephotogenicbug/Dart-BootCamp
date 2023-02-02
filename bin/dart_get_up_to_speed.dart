@@ -75,8 +75,25 @@ void main(List<String> arguments) {
   // Do While Loops
 
   do {
-    print('hello');
+    print('hello while loop');
   } while (false);
 
-  
+  // Nested Function
+  String returnsStringNested() {
+    return 'Hello Nested';
+  }
+
+  returnsStringNested();
+  print(returnsStringTopLevel());
+}
+
+// Top Level Functions
+String returnsStringTopLevel() {
+  return 'Hello Top Level';
+}
+
+void otherFunction() {
+  // can only call topLevel Functions
+  returnsStringTopLevel();
+
 }
