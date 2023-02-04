@@ -145,11 +145,26 @@ void main(List<String> arguments) {
 // Spread Operator
   final list1 = ['hello', 'there'];
   final list2 = ['what', 'op'];
-  <String>[
-    ...list1,
-    ...list2
-  ];
+  <String>[...list1, ...list2];
+
+  // enums
+  final AccountType userAccountType = AccountType.premium;
+  print(userAccountType.index);
+  AccountType.values[1];
+
+  switch (userAccountType) {
+    case AccountType.free:
+      print('0 USD');
+      break;
+    case AccountType.premium:
+      print('20 USD');
+      break;
+    default:
+      break;
+  }
 }
+
+enum AccountType { free, premium, vip }
 
 typedef intTransformer = int Function(int);
 
