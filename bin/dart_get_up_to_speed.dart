@@ -91,6 +91,64 @@ void main(List<String> arguments) {
   final results = twicePluseFive(3);
 
   print(results);
+
+  // Lists
+  List<int> myList = [1, 2, 3];
+
+  final firstElement = myList[0];
+
+  final myList2 = [1, 2, 3];
+
+  <int>[1, 2, 3];
+
+  // MAP
+  Map<String, dynamic> myMap = {
+    'name': 'John Doe',
+    'age': 42,
+    'registered': true,
+  };
+
+  final name = myMap['name'];
+
+  // Sets
+  Set<int> mySet = {1, 2, 3, 4};
+  print(mySet.length);
+
+  // collections
+
+  final names = ['John', 'Jane', 'Mathew'];
+
+  final nameLengths = names.map((name) => name.length).toList();
+  final namesFiltered = names.where((name) => name.length == 4).toList();
+  print(namesFiltered);
+  // Loop through list
+  for (int i = 0; i < namesFiltered.length; i++) {
+    print(namesFiltered[i]);
+  }
+
+  for (final name in namesFiltered) {
+    print(name);
+  }
+
+  namesFiltered.forEach((name) => print(name));
+
+  //  String Collection
+  bool isSignedIn = true;
+  <String>['This is a content', if (isSignedIn) 'Sign Out' else 'Sign In'];
+
+  final xstring = <String>[
+    for (int i = 0; i < 5; i++) i.toString(),
+    for (final number in [1, 2, 3]) number.toString(),
+  ];
+  print(xstring);
+
+// Spread Operator
+  final list1 = ['hello', 'there'];
+  final list2 = ['what', 'op'];
+  <String>[
+    ...list1,
+    ...list2
+  ];
 }
 
 typedef intTransformer = int Function(int);
