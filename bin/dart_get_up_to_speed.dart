@@ -106,3 +106,20 @@ void optionalpositionalParams(int x, double y, [String greeting = 'HI']) {
   optionalpositionalParams(5, 3.5);
   optionalpositionalParams(5, 3.5, "HI Optionally");
 }
+
+void namedOptionalParams({
+  int? x,
+  double? y,
+  String? greeting,
+}) {
+  namedOptionalParams(x: 5, y: 3.5);
+}
+
+void namedRequiredParams(
+  int positional, {
+  required int x,
+  required double y,
+  required String greeting,
+}) {
+  namedRequiredParams(10, x: 5, y: 3.5, greeting: 'HI');
+}
