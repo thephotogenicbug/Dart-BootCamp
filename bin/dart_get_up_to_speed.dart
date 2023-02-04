@@ -148,7 +148,7 @@ void main(List<String> arguments) {
   <String>[...list1, ...list2];
 
   // enums
-  final AccountType userAccountType = AccountType.premium;
+  const AccountType userAccountType = AccountType.premium;
   print(userAccountType.index);
   AccountType.values[1];
 
@@ -162,6 +162,25 @@ void main(List<String> arguments) {
     default:
       break;
   }
+
+  User myUser = const User(name: "John Doe", photoUrl: "http://example.com");
+  final user2 = const User(name: "John Doe", photoUrl: "http://example.com");
+  final user3 = const User(name: "John Doe", photoUrl: "http://example.com");
+  final user4 = const User(name: "John Doe", photoUrl: "http://example.com");
+  final user5 = const User(name: "John Doe", photoUrl: "http://example.com");
+
+  print(user3 == user2);
+
+  // myUser.name = "Matt Doe";
+}
+
+// OOPS
+//Constructor
+class User {
+  final String name;
+  final String photoUrl;
+
+  const User({required this.name, required this.photoUrl});
 }
 
 enum AccountType { free, premium, vip }
