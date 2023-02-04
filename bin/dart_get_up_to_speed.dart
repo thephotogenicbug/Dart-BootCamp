@@ -170,6 +170,7 @@ void main(List<String> arguments) {
   final user5 = const User(name: "John Doe", photoUrl: "http://example.com");
 
   print(user3 == user2);
+  user3.hasLongName();
 
   // myUser.name = "Matt Doe";
 }
@@ -181,6 +182,10 @@ class User {
   final String photoUrl;
 
   const User({required this.name, required this.photoUrl});
+
+  bool hasLongName() {
+    return name.length > 10;
+  }
 }
 
 enum AccountType { free, premium, vip }
