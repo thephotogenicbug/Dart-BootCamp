@@ -85,6 +85,21 @@ void main(List<String> arguments) {
 
   returnsStringNested();
   print(returnsStringTopLevel());
+
+  // Pass functions inside main function
+  final twicePluseFive = twice((x) => x + 5);
+  final results = twicePluseFive(3);
+
+  print(results);
+}
+
+typedef intTransformer = int Function(int);
+
+intTransformer twice(intTransformer f) {
+  // anonymous function
+  return (int x) {
+    return f(f(x));
+  };
 }
 
 // Top Level Functions
